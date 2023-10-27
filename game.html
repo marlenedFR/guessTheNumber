@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/M.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./game.css" />
+    <title>Devine le nombre !</title>
+  </head>
+  <body>
+    <div class="game-title flex flex-col">
+      <h1 class="mt-8 text-center sm:text-3xl md:text-4xl">DEVINE LE NOMBRE</h1>
+    </div>
+    <div class="flex min-h-screen items-center justify-center">
+      <div class="game-container">
+        <p class="text-intro">
+          Je pense à un nombre entre 0 et 10, essaie de le trouver 😉
+        </p>
+        <p class="score">Score :</p>
+        <p>Ta proposition :</p>
+        <form id="numberForm" class="flex">
+          <input
+            class="input-number"
+            type="number"
+            name="input-number"
+            id="input-number"
+            placeholder="3"
+            min="0"
+            max="10"
+          />
+          <button class="validate-btn">Valider</button>
+        </form>
+        <p class="legend">Entre ton numéro</p>
+        <div class="results-bar"></div>
+        <div class="results-numbers">
+          <p>0</p>
+          <p>10</p>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./game.js"></script>
+  </body>
+</html>

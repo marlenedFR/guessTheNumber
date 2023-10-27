@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
+
+body {
+  @apply bg-neutral-50 font-sans text-neutral-900 antialiased;
+  font-family: 'Raleway', sans-serif;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.dynamic-color {
+}
+
+button {
+  @apply ml-2 mt-2 inline-flex h-10 items-center justify-center rounded-md  p-3 text-sm font-medium text-neutral-50  sm:h-10 sm:p-3;
+}
+
+input {
+  @apply mt-2 flex h-10 w-48 rounded-md border border-neutral-400 bg-neutral-50 p-3 text-sm ring-offset-neutral-50 placeholder:text-neutral-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-800 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 sm:h-10  sm:w-48 sm:p-3;
+}
+
+h1 {
+  @apply text-3xl sm:text-3xl md:text-4xl;
+}
+
+.input-error::placeholder {
+  @apply font-bold text-red-500;
+}
+
+.game-container {
+  /* @apply mx-auto flex flex-col justify-center rounded-md border border-neutral-200 p-8; */
+  @apply mx-auto flex flex-col justify-center p-8;
+  @apply sm:mx-8 sm:p-8;
+  @apply md:mx-12 md:p-16;
+  @apply lg:mx-24 lg:max-w-lg;
+}
+
+.text-intro {
+  @apply text-left;
+}
+
+.score {
+  @apply m-2 text-right;
+}
+
+.legend {
+  @apply ml-1 mt-1 text-left text-xs text-neutral-400;
+}
+
+.results-bar {
+  @apply relative mt-7 flex h-12 w-full flex-col items-center justify-center rounded-md border border-neutral-400 p-4;
+}
+
+.results-numbers {
+  @apply flex flex-row justify-between sm:flex-row;
+}
+
+.red-dot {
+  @apply h-4 w-4 rounded-full bg-red-500;
+}
