@@ -1,3 +1,5 @@
+import 'index.css';
+
 const nameForm = document.getElementById('nameForm');
 nameForm.addEventListener('submit', (e) => {
   e.preventDefault();
