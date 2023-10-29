@@ -30,7 +30,7 @@ nameForm.addEventListener('submit', (e) => {
   nameForm.classList.add('hidden');
   const h1 = document.querySelector('h1');
   const instructions = document.querySelector('.instructions');
-  const welcomeContainer = document.querySelector('.welcomeContainer');
+  const welcomeContainer = document.querySelector('.welcome-container');
   welcomeContainer.classList.remove('hidden');
   instructions.classList.remove('hidden');
   h1.textContent = `Bonjour ${name}`;

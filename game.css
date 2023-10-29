@@ -29,8 +29,7 @@ h1 {
 }
 
 .game-container {
-  /* @apply mx-auto flex flex-col justify-center rounded-md border border-neutral-200 p-8; */
-  @apply mx-auto mt-20 flex flex-col justify-center p-8 text-justify;
+  @apply mx-auto mt-2 flex flex-col justify-center p-8 text-justify;
   @apply sm:mx-8 sm:p-8;
   @apply md:mx-12 md:p-16;
   @apply lg:mx-24 lg:max-w-lg;
@@ -45,7 +44,7 @@ h1 {
 }
 
 .results-bar {
-  @apply relative mt-7 flex h-12 w-full flex-col items-center justify-center border-b border-neutral-400;
+  @apply relative mt-4 flex h-10 w-full flex-col items-center justify-center border-b border-neutral-400;
 }
 
 .results-numbers {
@@ -54,4 +53,8 @@ h1 {
 
 .congrats-text {
   @apply font-bold;
+}
+
+.credits {
+  @apply fixed bottom-0 left-0 right-0 mb-4 mt-0 flex flex-col items-center justify-center text-xs text-gray-400 md:text-xs;
 }

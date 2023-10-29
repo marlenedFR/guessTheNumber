@@ -62,6 +62,8 @@ const handleValidateBtnClick = (e) => {
     localStorage.setItem('currentScore', currentScore);
     scoreElement.textContent = `Score : ${currentScore}`;
     document.querySelector('.score');
+    // Masquer le clavier sur les versions mobiles lorsque le numéro est trouvé
+    document.querySelector('.input-number').blur();
   } else {
     // Numéro pas trouvé
     // Si les valeurs sont différentes, on affiche un message d'indice
