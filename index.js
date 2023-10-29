@@ -1,3 +1,5 @@
+import { inject } from '@vercel/analytics';
+
 const nameForm = document.getElementById('nameForm');
 nameForm.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -51,3 +53,5 @@ colorBoxes.forEach((box) => {
     localStorage.setItem('selectedColor', selectedColor);
   });
 });
+
+inject();
