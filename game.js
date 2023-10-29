@@ -1,11 +1,17 @@
+// Récupérer le prénom dans le localStorage
+const playerName = localStorage.getItem('name');
+// console.log(playerName);
+
 // Score
 let currentScore = localStorage.getItem('currentScore')
   ? parseInt(localStorage.getItem('currentScore'))
   : 0;
 
+let isGameOver = false;
+
 // Génération d'un nombre aléatoire
 const randomNumber = Math.floor(Math.random() * 11);
-console.log(randomNumber);
+// console.log(randomNumber);
 
 // Gestion de la couleur sélectionnée
 const getColorFromLocalStorage = () => localStorage.getItem('selectedColor');
@@ -31,9 +37,13 @@ const handleValidateBtnClick = (e) => {
     document.querySelector('.input-number').value = '';
     return;
   }
+  if (isGameOver) {
+    return;
+  }
   // Vérification de la valeur saisie avec le numéro généré aléatoirement
   if (parseInt(inputValue) === randomNumber) {
     // Numéro trouvé
+    isGameOver = true;
     // Si les valeurs sont identiques, on retire le message d'indice
     const hintElement = document.querySelector('.hint .hint-value');
     if (hintElement) {
@@ -121,14 +131,20 @@ const displayHint = () => {
   document.querySelector('.hint').appendChild(hintValue);
 };
 
-// Gestion du message de félicitations
-const displayCongrats = () => {
-  const congrats = document.createElement('div');
-  congrats.classList.add('congrats');
+// Fonction pour afficher le texte de félicitations
+const displayCongratsText = () => {
+  const hintElement = document.querySelector('.hint');
+  hintElement.innerHTML = ''; // Vide l'élément "hint"
+
   const congratsText = document.createElement('p');
   congratsText.classList.add('congrats-text');
-  congratsText.textContent = 'Félicitations !';
-  congrats.appendChild(congratsText);
+  congratsText.textContent = `Félicitations ${playerName} !`;
+  hintElement.appendChild(congratsText);
+};
+
+// Fonction pour afficher le lien "Rejouer"
+const displayReplayLink = () => {
+  const hintElement = document.querySelector('.replay');
 
   const replayLink = document.createElement('a');
   replayLink.classList.add('replay-link');
@@ -139,8 +155,13 @@ const displayCongrats = () => {
   replayLink.addEventListener('click', () => {
     window.location.reload();
   });
-  congrats.appendChild(replayLink);
-  document.querySelector('.congrats').appendChild(congrats);
+  hintElement.appendChild(replayLink);
+};
+
+// Fonction principale pour afficher les félicitations
+const displayCongrats = () => {
+  displayCongratsText();
+  displayReplayLink();
 };
 
 // Initialisation du jeu

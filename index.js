@@ -12,6 +12,8 @@ nameForm.addEventListener('submit', (e) => {
     return;
   } else {
     document.getElementById('name').classList.remove('input-error');
+    // Stocker le prénom dans le localStorage
+    localStorage.setItem('name', e.target[0].value);
   }
 
   if (!selectedColor) {
