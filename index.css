@@ -34,7 +34,7 @@ h1 {
 }
 
 .welcome-smiley {
-  @apply mt-4 flex flex-row items-center justify-center text-2xl;
+  @apply mt-3 flex flex-row items-center justify-center text-2xl;
 }
 
 .selected {

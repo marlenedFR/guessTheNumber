@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/M.jpg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0 user-scalable=no"
+    />
     <link rel="stylesheet" href="./index.css" />
     <title>Bienvenue</title>
   </head>
@@ -14,7 +17,7 @@
       <p class="welcome-smiley">😊</p>
     </div>
     <!-- Formulaire de renseignements de l'utilisateur -->
-    <div class="flex min-h-screen flex-col items-center justify-center">
+    <div class="mt-28 flex flex-col items-center justify-center">
       <form id="nameForm">
         <label for="name"> Quel est ton prénom ? </label>
         <input
@@ -27,18 +30,18 @@
         <!-- Couleur -->
         <label for="color"> Quelle couleur préfères-tu ? </label>
         <div id="colorContainer">
-          <div class="color-box bg-red-500"></div>
-          <div class="color-box bg-fuchsia-500"></div>
-          <div class="color-box bg-emerald-500"></div>
-          <div class="color-box bg-yellow-400"></div>
-          <div class="color-box bg-indigo-500"></div>
+          <div class="color-box border-none bg-red-500"></div>
+          <div class="color-box border-none bg-fuchsia-500"></div>
+          <div class="color-box border-none bg-emerald-500"></div>
+          <div class="color-box border-none bg-yellow-400"></div>
+          <div class="color-box border-none bg-indigo-500"></div>
         </div>
         <!-- Bouton de validation -->
         <button class="button mt-8">GO !</button>
       </form>
       <!-- Instructions du jeu -->
-      <div class="instructions mx-4 hidden sm:mx-8 md:mx-12 lg:mx-24">
-        <p>Je vais générer un nombre aléatoire entre 0 et 10.</p>
+      <div class="instructions mx-4 hidden text-justify sm:mx-8 md:mx-12 lg:mx-24">
+        <p class="mb-2">Je vais générer un nombre aléatoire entre 0 et 10.</p>
         <p>Ta mission consiste à le trouver en un minimum de tentatives.</p>
         <button class="start-btn mt-4">
           <a href="./game.html"> Démarrer</a>
