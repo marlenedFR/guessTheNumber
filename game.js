@@ -31,10 +31,10 @@ const applySelectedColor = (color) => {
 // Gestion du bouton "valider"
 const handleValidateBtnClick = (e) => {
   e.preventDefault();
-  const inputValue = document.querySelector('.input-number').value;
+  const inputElement = document.querySelector('.input-number');
+  const inputValue = inputElement.value;
   if (inputValue === '' || inputValue < 0 || inputValue > 10 || isNaN(inputValue)) {
-    document.querySelector('.input-number').style.borderColor = 'red';
-    document.querySelector('.input-number').value = '';
+    inputElement.style.borderColor = 'red';
     return;
   }
   if (isGameOver) {
@@ -63,7 +63,7 @@ const handleValidateBtnClick = (e) => {
     scoreElement.textContent = `Score : ${currentScore}`;
     document.querySelector('.score');
     // Masquer le clavier sur les versions mobiles lorsque le numéro est trouvé
-    document.querySelector('.input-number').blur();
+    inputElement.blur();
   } else {
     // Numéro pas trouvé
     // Si les valeurs sont différentes, on affiche un message d'indice
@@ -71,12 +71,11 @@ const handleValidateBtnClick = (e) => {
     // Si les valeurs sont différentes, on affiche un smiley triste
     displaySmiley(inputValue, false);
     // Sur les versions mobiles, on empêche le clavier de se fermer
-    document.querySelector('.input-number').focus();
-    document.querySelector('.input-number').value = '';
+    inputElement.focus();
   }
 };
 
-const inputNumber = document.querySelector('.input-number');
+const inputNumber = document.querySelector('.input-number'); //
 inputNumber.setAttribute('type', 'number');
 inputNumber.setAttribute('min', '0');
 inputNumber.setAttribute('max', '10');
