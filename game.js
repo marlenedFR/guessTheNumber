@@ -75,11 +75,11 @@ const handleValidateBtnClick = (e) => {
     document.querySelector('.input-number').value = '';
   }
 };
-// Effacer la valeur de l'input quand on clique dessus (fonction flêchée)
+
 const inputNumber = document.querySelector('.input-number');
-inputNumber.addEventListener('click', () => {
-  inputNumber.value = '';
-});
+inputNumber.setAttribute('type', 'number');
+inputNumber.setAttribute('min', '0');
+inputNumber.setAttribute('max', '10');
 
 // Gestion des smileys
 const randomSmiley = (smileys) => {
